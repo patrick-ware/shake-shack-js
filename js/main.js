@@ -6,7 +6,7 @@ function doFetch() {
   console.log("getting data from API...")
   
 //  value = document.querySelector("#search").value;
-  api = 'http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q='+value;
+  api = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson';
   fetch(api)
     .then(response => response.json())
     .then(data => {
