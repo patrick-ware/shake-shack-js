@@ -71,7 +71,7 @@ html, body{
   .BarChart-bar {
     color: black;
     text-align: center;
-    font-size: 36pt;
+    font-size: 200%;
     font-weight: bold;
     background: var(--color-bars);
     flex-grow: 1;
@@ -85,7 +85,7 @@ html, body{
   .BarChart-bar {
     color: black;
     text-align: center;
-    font-size: 36pt;
+    font-size: 200%;
     font-weight: bold;
     background: var(--color-bars);
     flex-grow: 1;
