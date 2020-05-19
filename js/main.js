@@ -14,4 +14,10 @@ function doFetch() {
         console.log("this is data", data.data);
         apiGifData = data.data;
     });
-}
+
+  // Looping through an object called "apiData"
+//  for (const [key, value] of Object.entries(apiData)) {
+//      console.log('this is key', key);
+//      console.log('this is value', value);
+//}
+} 
