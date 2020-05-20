@@ -21,7 +21,7 @@ function loopData() {
   // Looping through an object called "apiData"
   // console.log("data is", apiData)
   for (const [key, value] of Object.entries(apiData)) {
-      console.log('this is key', key);
-      console.log('this is value', value);
+      console.log('this is mag', value.properties.mag);
+      console.log('this is place', value.properties.place);
   }
 } 
