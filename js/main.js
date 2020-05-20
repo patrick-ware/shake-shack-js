@@ -25,3 +25,16 @@ function loopData() {
       console.log('this is place', value.properties.place);
   }
 } 
+
+function addBars() {
+  let chartDiv = document.querySelector(".BarChart");
+
+  // Clear anything that might be in the div
+  chartDiv.innerHTML = '';
+  for (const [key, value] of Object.entries(apiData)) {
+    let newBar = document.createElement('div');
+    let barHeight = value.properties.mag    
+    newBar.className = "BarChart-bar"
+    newBar.style.height = barHeight+'%'
+  }
+}
