@@ -75,7 +75,7 @@ html, body{
     font-weight: bold;
     background: var(--color-bars);
     flex-grow: 1;
-    margin: 0px 5px 0px 5px;
+    margin: 0% 1% 0% 1%;
     transition: 0.2s;
   }
 }
@@ -89,7 +89,7 @@ html, body{
     font-weight: bold;
     background: var(--color-bars);
     flex-grow: 1;
-    margin: 0px 20px 0px 20px;
+    margin: 0% 1% 0% 1%;
     transition: 0.2s;
   }
 }
