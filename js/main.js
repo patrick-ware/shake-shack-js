@@ -33,8 +33,10 @@ function addBars() {
   chartDiv.innerHTML = '';
   for (const [key, value] of Object.entries(apiData)) {
     let newBar = document.createElement('div');
-    let barHeight = value.properties.mag    
-    newBar.className = "BarChart-bar"
-    newBar.style.height = barHeight+'%'
+    let barHeight = value.properties.mag;    
+    newBar.className = "BarChart-bar";
+    newBar.style.height = barHeight*10 +'%';
+    
+    chartDiv.appendChild(newBar);
   }
 }
