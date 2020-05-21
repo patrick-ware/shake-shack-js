@@ -1,8 +1,13 @@
 function render() {
-  let chartDiv = document.querySelector(".BarChart");
   console.log("--------adding data to chart")
+  // Fetch the div from the page
+  let chartDiv = document.querySelector(".BarChart");
+
+
   // Clear anything that might be in the div
   chartDiv.innerHTML = '';
+
+  // Loop through data and assign heights
   for (const [key, value] of Object.entries(apiData)) {
     let mag = value.properties.mag
     let newBar = document.createElement('div');
@@ -11,16 +16,19 @@ function render() {
     newBar.className = "BarChart-bar";
     newBar.style.height = barHeight +'%';
     
+    // Add bar to div
     chartDiv.appendChild(newBar);
   }
 }
 
 let apiData = [];
 async function doFetch() {
-  console.log("getting data from API...");
+  console.log("--------getting data from API");
   
-  //value = document.querySelector("#search").value;
-  api = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-05-19&minmagnitude=5&minlatitude=24.396308&minlongitude=-124.848974&maxlatitude=49.384358&maxlongitude=-66.885444";
+  // value = document.querySelector("#search").value;
+  api = "https://earthquake.usgs.gov/fdsnws/event/1/query? format=geojson&starttime=2020-01-01&endtime=2020-05-19&minmagnitude=5&minlatitude=24.396308&minlongitude=-124.848974&maxlatitude=49.384358&maxlongitude=-66.885444";
+  
+  // Fetch data from API before rendering  
   await fetch(api)
     .then(response => response.json())
     .then(data => {
@@ -29,6 +37,6 @@ async function doFetch() {
         apiData = data.features;
     });
 
-  console.log("now render please");
+  // Render data from API in bar chart
   render();
 }
