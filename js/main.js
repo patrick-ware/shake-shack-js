@@ -32,12 +32,3 @@ function doFetch() {
   console.log("now render please");
   render();
 }
-
-function loopData() {
-  // Looping through an object called "apiData"
-  // console.log("data is", apiData)
-  for (const [key, value] of Object.entries(apiData)) {
-      console.log('this is mag', value.properties.mag);
-      console.log('this is place', value.properties.place);
-  }
-} 
