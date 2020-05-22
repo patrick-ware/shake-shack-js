@@ -29,7 +29,18 @@ async function doFetch() {
   value = document.querySelector("#magnitude").value;
   console.log("magnitude selected:",value);
 
-  api = "https://earthquake.usgs.gov/fdsnws/event/1/query? format=geojson&starttime=2020-01-01&endtime=2020-05-19&minmagnitude="+ value+"&minlatitude=24.396308&minlongitude=-124.848974&maxlatitude=49.384358&maxlongitude=-66.885444";
+  // Get current date
+  let dateObj = new Date();
+  
+  let month = dateObj.getUTCMonth() + 1; //months from 1-12
+  let day = dateObj.getUTCDate();
+  let year = dateObj.getUTCFullYear();
+
+  let today = year + "-" + month + "-" + day;
+  console.log("today is:", today)  
+
+  // Assign api url with variables
+ api = "https://earthquake.usgs.gov/fdsnws/event/1/query? format=geojson&starttime=2020-01-01&endtime=" + today +"&minmagnitude=" + value + "&minlatitude=24.396308&minlongitude=-124.848974&maxlatitude=49.384358&maxlongitude=-66.885444";
   
   // Fetch data from API before rendering  
   await fetch(api)
