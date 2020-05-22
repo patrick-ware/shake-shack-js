@@ -111,15 +111,21 @@ html, body{
   background-color: var(--color-bars);
   border: none;
   color: var(--bg-color-page);
-  padding: 5px 10px;
+  padding: 2px 10px;
   text-align: center;
   display: inline-block;
   font-size: 18px;
-  margin: 0px;
+  margin: 5px;
+  transition: 0.4s;
+}
+
+.StdButton:hover {
+  background: #fa8428;
 }
 
 .Menu {
   font-size: 18px;
+  display: inline-block;
 }
 
 .Menu-item {
