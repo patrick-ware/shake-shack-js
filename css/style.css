@@ -99,3 +99,29 @@ html, body{
   background: #d6c7bb;
   transform: scale(1.05, 1);
 }
+
+.DataModifier {
+  color: white;
+  font-size: 18pt;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.StdButton {
+  background-color: var(--color-bars);
+  border: none;
+  color: var(--bg-color-page);
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  margin: 0px;
+}
+
+.Menu {
+  font-size: 18px;
+}
+
+.Menu-item {
+  font-size: 18px;
+}
