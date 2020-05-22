@@ -35,7 +35,8 @@ async function doFetch() {
   let month = dateObj.getUTCMonth() + 1; //months from 1-12
   let day = dateObj.getUTCDate();
   let year = dateObj.getUTCFullYear();
-
+  
+  // Create variable to pass into api
   let today = year + "-" + month + "-" + day;
   console.log("today is:", today)  
 
