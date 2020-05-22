@@ -101,6 +101,6 @@ html, body{
 }
 
 .DataModifier {
-  margin-right: 30px;
-  font-size: 100px;  
+  font-size: 18pt;
+  padding-left: 30px;
 }
