@@ -29,7 +29,7 @@ async function doFetch() {
   value = document.querySelector("#magnitude").value;
   console.log("magnitude selected:",value);
 
-  api = "https://earthquake.usgs.gov/fdsnws/event/1/query? format=geojson&starttime=2020-01-01&endtime=2020-05-19&minmagnitude=5&minlatitude=24.396308&minlongitude=-124.848974&maxlatitude=49.384358&maxlongitude=-66.885444";
+  api = "https://earthquake.usgs.gov/fdsnws/event/1/query? format=geojson&starttime=2020-01-01&endtime=2020-05-19&minmagnitude="+ value+"&minlatitude=24.396308&minlongitude=-124.848974&maxlatitude=49.384358&maxlongitude=-66.885444";
   
   // Fetch data from API before rendering  
   await fetch(api)
