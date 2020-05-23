@@ -7,18 +7,20 @@ function render() {
   // Clear anything that might be in the div
   chartDiv.innerHTML = '';
 
-  // Loop through data and assign heights
+  // Only display most recent 20 records
   let mostRecent = apiData.slice(0,19);
+
+  // Loop through data
   for (const [key, value] of Object.entries(mostRecent)) {
     let mag = value.properties.mag
     let place = value.properties.place
-    let time = value.properties.time
+    let date = new Date(value.properties.time).toUTCString()
     let newBar = document.createElement('div');
     let barHeight = mag*10;
     newBar.textContent = mag.toFixed(1);   
     newBar.className = "BarChart-bar";
     newBar.style.height = barHeight +'%';
-    newBar.onclick = function() { alert(mag+" | "+place+" | "+time); };
+    newBar.onclick = function() { alert(mag+" | "+place+" | "+date); };
     
     // Add bar to div
     chartDiv.appendChild(newBar);
