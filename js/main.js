@@ -10,12 +10,14 @@ function render() {
   // Loop through data and assign heights
   for (const [key, value] of Object.entries(apiData)) {
     let mag = value.properties.mag
+    let place = value.properties.place
+    let time = value.properties.time
     let newBar = document.createElement('div');
     let barHeight = mag*10;
     newBar.textContent = mag.toFixed(1);   
     newBar.className = "BarChart-bar";
     newBar.style.height = barHeight +'%';
-    newBar.onclick = function() { alert('test'); };
+    newBar.onclick = function() { alert(mag+" | "+place+" | "+time); };
     
     // Add bar to div
     chartDiv.appendChild(newBar);
