@@ -8,7 +8,8 @@ function render() {
   chartDiv.innerHTML = '';
 
   // Loop through data and assign heights
-  for (const [key, value] of Object.entries(apiData)) {
+  let mostRecent = apiData.slice(0,19);
+  for (const [key, value] of Object.entries(mostRecent)) {
     let mag = value.properties.mag
     let place = value.properties.place
     let time = value.properties.time
