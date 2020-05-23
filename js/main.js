@@ -15,6 +15,7 @@ function render() {
     newBar.textContent = mag.toFixed(1);   
     newBar.className = "BarChart-bar";
     newBar.style.height = barHeight +'%';
+    newBar.onclick = function() { alert('test'); };
     
     // Add bar to div
     chartDiv.appendChild(newBar);
@@ -22,7 +23,7 @@ function render() {
 }
 
 let apiData = [];
-async function doFetch() {
+function doFetch() {
   console.log("--------getting data from API");
   
   // Get magnitude value from dropdown menu
@@ -44,14 +45,12 @@ async function doFetch() {
  api = "https://earthquake.usgs.gov/fdsnws/event/1/query? format=geojson&starttime=2020-01-01&endtime=" + today +"&minmagnitude=" + value + "&minlatitude=24.396308&minlongitude=-124.848974&maxlatitude=49.384358&maxlongitude=-66.885444";
   
   // Fetch data from API before rendering  
-  await fetch(api)
+  fetch(api)
     .then(response => response.json())
     .then(data => {
         console.log("fetch successful");
         console.log("this is data", data);
         apiData = data.features;
+        render();
     });
-
-  // Render data from API in bar chart
-  render();
 }
