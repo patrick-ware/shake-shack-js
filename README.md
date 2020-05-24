@@ -18,4 +18,4 @@ The following other parameters were used to retrieve the displayed data:
 
 `maxlongitude`: -66.885444
 
-The current date is retrieve from the browser and submitted as the `endtime` parameter.
+The current date is retrieved from the browser and submitted as the `endtime` parameter.
