@@ -1,4 +1,4 @@
-![shake-shack-js](./shake-shack-js)
+![shake-shack-js](./shake-shack-js.png)
 # shake-shack-js
 
 A CSS visualization of earthquake data from [USGS Earthquake Catalog API](https://earthquake.usgs.gov/fdsnws/event/1/)
