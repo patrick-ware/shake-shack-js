@@ -1,11 +1,13 @@
 function render() {
   console.log("--------adding data to chart")
   // Fetch the div from the page
+  let warningDiv = document.querySelector("#warning");
   let chartDiv = document.querySelector(".BarChart");
 
 
   // Clear anything that might be in the div
   chartDiv.innerHTML = '';
+  warningDiv.innerHTML = '';
 
   // Only display most recent 20 records to avoid overflowing char
   let mostRecent = apiData.slice(0,19);
@@ -16,11 +18,20 @@ function render() {
 
   if (apiData.length > 20) {
     console.log("Your selection has queried too many records")
-    warningMessage.textContent = "Warning! Your selection has queried more records than can be displayed on the graph (" + apiData.length + " records). Only the 20 most recent records will be shown."
+ 
+    warningMessage.textContent = 
+        "Warning! Your selection has queried more records \
+        than can be displayed on the graph (" + apiData.length + " records). \
+        Only the 20 most recent records will be shown."
+
   } else if (apiData.length === 0) {
     console.log("Your selection hasd queried no records")
+
     warningMessage.textContent = "Warning! Your selection has queried no records."
   }
+  
+  // Add warning info to div
+  warningDiv.appendChild(warningMessage)
 
   // Loop through data
   for (const [key, value] of Object.entries(mostRecent)) {
@@ -35,7 +46,6 @@ function render() {
     newBar.onclick = function() { alert(mag+" | "+place+" | "+date); };
     
     // Add bar to div
-    chartDiv.appendChild(warningMessage);
     chartDiv.appendChild(newBar);
   }
 }
