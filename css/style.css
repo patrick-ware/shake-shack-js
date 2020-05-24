@@ -32,6 +32,27 @@ html, body{
     font-style: italic;
     text-align: center;
   }
+
+  .DataModifier {
+    color: white;
+    font-size: 18pt;
+    text-align: left;
+    padding-left: 30px;
+    text-align: center;
+  }
+
+  .Menu {
+    font-size: 18px;
+    display: inline-block;
+  }
+
+  .Warning {
+    font-size: 18px;
+    color: var(--color-bars);
+    display: inline-block;
+    padding-left: 30px;
+    text-align: center;
+  }
 }
 
 /* Page element styling for larger tablets and computers */
@@ -48,6 +69,29 @@ html, body{
     font-size: 20pt;
     font-style: italic;
     text-align: left;
+    padding-left: 30px;
+  }
+
+  .DataModifier {
+    color: white;
+    font-size: 18pt;
+    text-align: left;
+    padding-left: 30px;
+  }
+
+  .Menu {
+    font-size: 18px;
+    display: inline-block;
+  }
+
+  .Menu-item {
+    font-size: 18px;
+  }
+
+  .Warning {
+    font-size: 24px;
+    color: var(--color-bars);
+    display: inline-block;
     padding-left: 30px;
   }
 }
@@ -71,7 +115,7 @@ html, body{
   .BarChart-bar {
     color: black;
     text-align: center;
-    font-size: 200%;
+    font-size: 2vw;
     font-weight: bold;
     background: var(--color-bars);
     flex-grow: 1;
@@ -85,7 +129,7 @@ html, body{
   .BarChart-bar {
     color: black;
     text-align: center;
-    font-size: 200%;
+    font-size: 2vw;
     font-weight: bold;
     background: var(--color-bars);
     flex-grow: 1;
@@ -100,13 +144,6 @@ html, body{
   transform: scale(1.05, 1);
 }
 
-.DataModifier {
-  color: white;
-  font-size: 18pt;
-  text-align: left;
-  padding-left: 30px;
-}
-
 .StdButton {
   background-color: var(--color-bars);
   border: none;
@@ -119,23 +156,10 @@ html, body{
   transition: 0.4s;
 }
 
+.Menu-item {
+    font-size: 18px;
+}
+
 .StdButton:hover {
   background: #fa8428;
-}
-
-.Menu {
-  font-size: 18px;
-  display: inline-block;
-}
-
-.Menu-item {
-  font-size: 18px;
-}
-
-.Warning {
-  font-size: 24px;
-  color: var(--color-bars);
-  display: inline-block;
-  padding-left: 30px;
-}
-  
+}  
