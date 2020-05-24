@@ -7,8 +7,20 @@ function render() {
   // Clear anything that might be in the div
   chartDiv.innerHTML = '';
 
-  // Only display most recent 20 records
+  // Only display most recent 20 records to avoid overflowing char
   let mostRecent = apiData.slice(0,19);
+  
+  // Create warning is too much data is queried or no data is queried
+  let warningMessage = document.createElement('div');
+  warningMessage.className = "Warning";
+
+  if (apiData.length > 20) {
+    console.log("Your selection has queried too many records")
+    warningMessage.textContent = "Warning! Your selection has queried more records than can be displayed on the graph (" + apiData.length + " records). Only the 20 most recent records will be shown."
+  } else if (apiData.length === 0) {
+    console.log("Your selection hasd queried no records")
+    warningMessage.textContent = "Warning! Your selection has queried no records."
+  }
 
   // Loop through data
   for (const [key, value] of Object.entries(mostRecent)) {
@@ -23,6 +35,7 @@ function render() {
     newBar.onclick = function() { alert(mag+" | "+place+" | "+date); };
     
     // Add bar to div
+    chartDiv.appendChild(warningMessage);
     chartDiv.appendChild(newBar);
   }
 }
@@ -44,7 +57,6 @@ function doFetch() {
   
   // Create variable to pass into api
   let today = year + "-" + month + "-" + day;
-  console.log("today is:", today)  
 
   // Assign api url with variables
  api = "https://earthquake.usgs.gov/fdsnws/event/1/query? format=geojson&starttime=2020-01-01&endtime=" + today +"&minmagnitude=" + value + "&minlatitude=24.396308&minlongitude=-124.848974&maxlatitude=49.384358&maxlongitude=-66.885444";

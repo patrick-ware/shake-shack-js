@@ -131,3 +131,10 @@ html, body{
 .Menu-item {
   font-size: 18px;
 }
+
+.Warning {
+  font-size: 18px;
+  position: fixed;
+  margin-top: 10px;
+}
+  
